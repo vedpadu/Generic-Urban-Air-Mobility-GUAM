@@ -2,6 +2,7 @@ disp('Bus setup');
 
 % setup bus objects
 clear ControlBus EnvironmentBus EomBus ForceMomentBus SurfaceActuatorBus SensorBus BUS_REF_INPUT;
+disp(SimIn.numEngines)
 
 % define the bus objects
 ControlBus(true, SimIn.numEngines, SimIn.numSurfaces);

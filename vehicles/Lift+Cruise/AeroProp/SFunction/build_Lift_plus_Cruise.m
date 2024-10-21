@@ -187,26 +187,27 @@ Tail = TailClass(hTail, vTail);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % number of props
-NP = 9; % See Ref. [1]
+NP = 4; % See Ref. [1]
 
 % diameter of each propellers. See Ref. [1] for each rotor radius...
-D = [10.0 10.0 10.0 10.0 10.0 10.0 10.0 10.0 9.0];
+D = [10.0 10.0 10.0 10.0];
+% 2 3 6 7 
 
 % Note: NDARC has different rotor numbering scheme for rotors 1-8
 % propeller location in the body frame % See Ref. [1] lines 1062-1078
-p_b = [ -5.07,  -4.63, -4.63, -5.07,  -19.2,  -18.76,-18.76,-19.2,  -31.94;
-       -18.750, -8.45,  8.45, 18.750, -18.750, -8.45,  8.45, 18.750,  0.000;
-        -6.73,  -7.04, -7.04, -6.73,   -9.01,  -9.3,  -9.3,  -9.01,  -7.79];
+p_b = [ -4.63, -4.63, -18.76,-18.76;
+       -8.45,  8.45, -8.45,  8.45;
+        -7.04, -7.04, -9.3,  -9.3];
 % motor location in the body frame % See Ref. [1] lines 1062-1079
-m_b =[  -5.07,  -4.63, -4.63, -5.07,  -19.2,  -18.76,-18.76,-19.2,  -31.94;
-       -18.750, -8.45,  8.45, 18.750, -18.750, -8.45,  8.45, 18.750,  0.000;
-        -7.60,  -6.04, -6.04, -7.6,   -8.00,  -8.3,  -8.3,  -8.00,  -7.79];
+m_b =[  -4.63, -4.63, -18.76,-18.76;
+       -8.45,  8.45, -8.45,  8.45;
+        -6.04, -6.04, -8.3,  -8.3];
 
 % propeller performance coefficients
 prop_coefs = load('APCSF_10x4p7_coef.mat'); % Selected for this configuration
 
 % propeller spin direction
-prop_spin = [ +1 -1  +1 -1 -1 +1 -1 +1 +1];
+prop_spin = [ -1  +1 +1 -1];
 
 % motor mass
 % See Ref. [2] computed as avg (Ex. fpor Rotor mass 1: B17+B18+B37+B38) for all 1-8 rotors
@@ -224,9 +225,9 @@ m_m = [repmat(rotor_asbly_mass,1,8)  pusher_asbly_mass];
 
 % thrust vector % See Ref. [1] for cant_hub angle for each rotor (either 0,
 % +8 or -8 degrees)
-p_T_e = [ 0,  0.000,  0.000,  0,  0,  0.000,  0.000,  0, 1;
-          0, -0.139,  0.139,  0,  0, -0.139,  0.139,  0, 0;
-         -1, -0.990, -0.990, -1, -1, -0.990, -0.990, -1, 0];
+p_T_e = [ 0.000,  0.000, 0.000,  0.000;
+          -0.139,  0.139, -0.139,  0.139;
+         -0.990, -0.990, -0.990, -0.990];
 
 % build and array of props
 Prop = cell(NP,1);

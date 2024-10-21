@@ -100,7 +100,7 @@ XEQ0 = zeros(21,N_trim,M_trim,L_trim);
 
 % Build the aircraft (aero/propulsive modeling..)
 if POLY  
-  SimIn.numEngines = 9;
+  SimIn.numEngines = 4;
   lpc = LpC_model_parameters(SimIn);
 else
   lpc = build_Lift_plus_Cruise();

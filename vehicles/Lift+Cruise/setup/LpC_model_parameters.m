@@ -37,18 +37,18 @@ Model.cbar=3.18;
 
 % wingspan [ft], see Ref. [1]
 Model.b=47.5;
-
+% 2 3 6 7
 % propeller/rotor locations [ft], see Ref. [2]
 Model.Prop_location = ...
-      [ -5.07,  -4.63, -4.63, -5.07,  -19.2,  -18.76,-18.76,-19.2,  -31.94;
-       -18.750, -8.45,  8.45, 18.750, -18.750, -8.45,  8.45, 18.750,  0.000;
-        -6.73,  -7.04, -7.04, -6.73,   -9.01,  -9.3,  -9.3,  -9.01,  -7.79];
+      [ -4.63, -4.63,  -18.76,-18.76;
+       -8.45,  8.45, -8.45,  8.45;
+        -7.04, -7.04, -9.3,  -9.3];
 
 % Propeller/rotor diameter [ft], see Ref [1]
-Model.Prop_D=[10*ones(1,8),9];
+Model.Prop_D=10*ones(1,4);
 
 % Propeller/rotor rotation direction (CW=+1, CCW=-1), see Ref. [1]
-Model.prop_spin = [ -1  1  -1  1  1 -1  1 -1  1];
+Model.prop_spin = [ 1  -1  -1  1];
 % rotors - as viewed from below looking up
 %     Poly model: N1 => +N, N2 => -N, N3 => +N, N4 => -N
 %                 N5 => -N, N6 => +N, N7 => -N, N8 => +N
@@ -57,12 +57,12 @@ Model.prop_spin = [ -1  1  -1  1  1 -1  1 -1  1];
 
 
 % Propeller/rotor rotational moment of inertia [slug-ft^2], Ref. [1]
-Model.Ip=[13.486*ones(1,8),17.486];
+Model.Ip=13.486*ones(1,4);
 
 % propeller/rotor orientation angles (roll-pitch-yaw) [deg], see Ref. [1]
-Model.Prop_angles=[  0,   0,   0,   0,   0,   0,   0,   0,   0
-                   -90, -90, -90, -90, -90, -90, -90, -90,   0
-                     0,  +8,  -8,   0,   0,  +8,  -8,   0,   0];
+Model.Prop_angles=[ 0,   0,  0,   0, 
+                   -90, -90, -90, -90,
+                     +8,  -8, +8,  -8];
 
 % unit vector of the axis of rotation and hub rotation matrix
 Model.Prop_rot_axis_e=zeros(3,SimIn.numEngines);
