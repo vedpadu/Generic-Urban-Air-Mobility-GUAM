@@ -7,7 +7,8 @@ userStruct.variants.refInputType=3; % 1=FOUR_RAMP, 2= ONE_RAMP, 3=Timeseries, 4=
 %% setup trajectory and pass to target
 %time        = [0 10:1:40]'; % Column vector of time points
 %time = [0 10 12 22 25 35]';
-time = [0 10 13 14 23 26 27 36 39]';
+%time = [0 10 13 14 23 26 27 36 39]';
+time = linspace(0, 10, 101);
 N_time = length(time);
 
 vel     = zeros(N_time, 3);
@@ -21,10 +22,11 @@ chid    = zeros(N_time, 3);
 %pos = zeros([N_time 3]);
 %pos = [0 0 0; 0 0 -100; 0 0 -100; 200 0 -100; 200 0 -100; 200 0 0];
 
-pos = [0 0 0; 0 0 -100; 0 0 -100; 0 0 -100; 200 0 -100; 200 0 -100; 200 0 -100; 200 0 0; 200 0 0];
+[pos, vel_i] = generate_Motion_Profile([0, 0, -100], [0, 0, 0], 0, 10, 101);
+%pos = [0 0 0; 0 0 -100; 0 0 -100; 0 0 -100; 200 0 -100; 200 0 -100; 200 0 -100; 200 0 0; 200 0 0];
 
 
-vel_i = [0 0 -10; 0 0 -4; 0 0 0; 20 0 0; 7 0 0; 0 0 0; 0 0 10; 0 0 4; 0 0 0];
+%vel_i = [0 0 -10; 0 0 -4; 0 0 0; 20 0 0; 7 0 0; 0 0 0; 0 0 10; 0 0 4; 0 0 0];
 
 % Compute heading
 chi     = atan2(vel_i(:,2),vel_i(:,1));
