@@ -24,12 +24,21 @@ v(:, 1:a0_end + 1) = v_max_mat(:, 1:a0_end + 1) .* t_mat(:, 1:a0_end + 1)/(a0_ra
 v(:, a0_end + 1:a1_start) = v_max_mat(:, a0_end + 1:a1_start);
 v(:, a1_start + 1:numE) = (v_max_mat(:, a1_start + 1:numE) - (v_max_mat(:, a1_start + 1:numE)/((1 - a1_rat) * t)) .* (t_mat(:, a1_start + 1:numE) - a1_rat * t));
 
-% for i = 2:1:numE
-%     p(:, i) = p(:, i - 1) + v(:, i - 1) * dt;
-% end
+
 p(:, 1:a0_end + 1) = p(:, 1) + v_max_mat(:, 1:a0_end + 1) .* (t_mat(:, 1:a0_end + 1) .^ 2)/(2 * a0_rat * t);
 p(:, a0_end + 1:a1_start) = p(:, a0_end + 1) + v_max_mat(:, a0_end + 1:a1_start) .* (t_mat(:, a0_end + 1:a1_start) - t_mat(1, a0_end + 1));
 t0 = t_mat(:, a1_start);
 p(:, a1_start + 1:numE) = p(:, a1_start) + (v_max_mat(:, a1_start + 1:numE) .* (t_mat(:, a1_start + 1:numE) - t0)) - (v_max_mat(:, a1_start + 1:numE)/((1 - a1_rat) * t)) .* (((t_mat(:, a1_start + 1:numE) - a1_rat * t) .^ 2 / 2.0) );
 v = v';
 p = p';
+
+% plotting code
+% figure(1)
+% plot(t_mat, v(:, 1), "r-");
+% grid on
+% hold on
+% plot(t_mat, p(:, 1), "g-");
+% 
+% xlabel("time (s)");
+% ylabel("X Position")
+%legend("velocity", "Pos", 'location', "northwest")
