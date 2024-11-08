@@ -112,15 +112,10 @@ idx_delf = 1;
 idx_dela = 2;
 idx_dele = 4;
 idx_delr = 5;
-% was inner 4
-% 7 11
-% 15 19
-%idx_om_yaw  = [ 11 15 27 31 ];
-idx_om_yaw  = [ 7 11 15 19 ];
-% was outer 4
-idx_om_roll = [ 7 11 15 19 ];
-idx_oml   = [ 7 11];
-idx_omt   = [15 19];
+idx_om_yaw  = [ 11 15 27 31 ];
+idx_om_roll = [ 7 19 23 35 ];
+idx_oml   = [ 7 11 15 19];
+idx_omt   = [23 27 31 35];
 idx_omp   = 23;
 
 dFydv = tiltwing.Fy_x(2);

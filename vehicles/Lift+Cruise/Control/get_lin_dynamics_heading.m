@@ -13,7 +13,7 @@ function [A, B, C, D, XU0] = get_lin_dynamics_heading(tiltwing, XEQ, UEQ, NS, NP
 %   y = C*x + D*u
 %
 %   x = [ px py pz phi th psi ubar vbar wbar p q r ]'
-%   u = [ delf dela dele delr omp1-9]'
+%   u = [ delf dela dele delr omp1-5]'
 %   y = x 
 % 
 %  dx = A*x + B*u

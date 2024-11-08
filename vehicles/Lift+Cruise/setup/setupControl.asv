@@ -73,13 +73,12 @@ ubar0 = Vel_bIc_0(1);
 wbar0 = Vel_bIc_0(3);
 % there is no way this is going to work on the low.
 % 1 4 5 8 deleted.. i have an idea
-ii0 = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19 22 23 25];
-for i = 1:21
+ii = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25]
+for ii = 1:21
     if length(Out.trim.WH) > 1 
-        ii = ii0(i);
-        XU0(i,1) = interp2(Out.trim.WH, Out.trim.UH, squeeze(Out.trim.XU0_interp(ii,:,:)), wbar0, ubar0,'linear',Out.trim.XU0_interp(ii,1,2));
+        XU0(ii,1) = interp2(Out.trim.WH, Out.trim.UH, squeeze(Out.trim.XU0_interp(ii,:,:)), wbar0, ubar0,'linear',Out.trim.XU0_interp(ii,1,2));
     else
-        XU0(i,1) = interp1(Out.trim.UH, Out.trim.XU0_interp(ii,:), ubar0, 'linear','extrap');
+        XU0(ii,1) = interp1(Out.trim.UH, Out.trim.XU0_interp(ii,:), ubar0, 'linear','extrap');
     end
 end
 Out.XU0 = XU0;

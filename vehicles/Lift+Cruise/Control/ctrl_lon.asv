@@ -77,12 +77,11 @@ if xeq(1) > Trans_pnt(2) % Zero out the lifting rotors after the trans regime en
 end
 
 % size definitions
-% because the Nu changes from lat to lon, im inclined to believe that
-% physical controls includes the propellors
+% because the Nu changes from lat to lon, im inclined to believe that t
 Nx  = 4;  % system states
 Ni  = 3;  % integrator states
 Nr  = 3;  % reference 
-Nu  = 7; % physical controls
+Nu  = 11; % physical controls
 Nv  = 1;  % virtual controls
 Nmu = 3;  % general inputs
 Nxi = 3;  % general states

@@ -13,7 +13,7 @@ function [Alon, Blon, Clon, Dlon, XU0, A_full, B_full, C_full, D_full] = get_lon
 %
 %   Desired linearized longitudinal output model
 %   x = [ ub wb q th ]'
-%   u = [ omp1-9 delf dele ]'
+%   u = [ omp1-5 delf dele ]'
 %   y = [ u w q th ]'
 %
 %  Definitions:
@@ -117,11 +117,11 @@ D_full  = D;
 
 % get_lin_dynamics_heading states and controls
 %   x = [ px py pz phi th psi ubar vbar wbar p q r ]'
-%   u = [ delf dela dele delr omp1-9]'
+%   u = [ delf dela dele delr omp1-5]'
 
 % Specify desired state and control indices of linear dynamics output models
 x_idx = [7 9 11 5]; % [ubar wbar q theta]
-u_idx = [5:13 3 1 ]; % [omp1-9 elev flaps] order matches what is in GUAM simulation
+u_idx = [5:9 3 1 ]; % [omp1-9 elev flaps] order matches what is in GUAM simulation
 y_idx = x_idx;
 
 Alon = A(x_idx,x_idx);

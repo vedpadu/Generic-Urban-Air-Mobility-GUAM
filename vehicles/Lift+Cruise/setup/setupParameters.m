@@ -53,7 +53,7 @@ SimPar.Control.Vel_bIc_0 = SimIn.Control.IC.Vel_bIc_0;
 
 % AGI Allocation parameters
 SimPar.Control.Alloc.Num_Mom            = 6; % Nominal number of allocation moments
-SimPar.Control.Alloc.Num_Eff            = 14; % Nominal number of allocation effectors
+SimPar.Control.Alloc.Num_Eff            = 10; % Nominal number of allocation effectors % 5 surfaces + 5 engines
 SimPar.Control.Alloc.Alloc_Type_Flag    = 0;  % Delta allocation =0, Absolute Allocation = 1
 SimPar.Control.Alloc.Eff_Rate_Flag      = 1; % Enforce effector rate limits=0, don't enforce = 1
 
@@ -161,11 +161,11 @@ SimPar.Fail.Surfaces.Generic_Sig_Select = [zeros(3,1);ones(8,1);zeros(4,1)]; % S
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Failure Types: 1=Hold Last, 2=Pre-Scale, 3=Post-Scale, 4=Pos Limits
 % 5=Rate Limits, 6=Generic, 7=Runaway(currently inactive), 8=Control Reversal
-SimPar.Fail.Props.FailInit           = [0; 0; 0; 0; 0; 0; 0; 0; 0]; % Specify failure type (see above)
-SimPar.Fail.Props.InitTime           = [0; 0; 0; 0; 0; 0; 0; 0; 0]; % Specify failure start time (sim time)
-SimPar.Fail.Props.StopTime           = [0; 0; 0; 0; 0; 0; 0; 0; 0]; % Specify failure stop time (use inf for end of sim)
-SimPar.Fail.Props.PreScale           = [0; 0; 0; 0; 0; 0; 0; 0; 0]; % Specify decimal pre-scale factor (e.g. 0.10 or 1.3)
-SimPar.Fail.Props.PostScale          = [0; 0; 0; 0; 0; 0; 0; 0; 0]; % Specify decimal post-scale factor (e.g. 0.10 or 1.3)
+SimPar.Fail.Props.FailInit           = [0; 0; 0; 0; 0]; % Specify failure type (see above)
+SimPar.Fail.Props.InitTime           = [0; 0; 0; 0; 0]; % Specify failure start time (sim time)
+SimPar.Fail.Props.StopTime           = [0; 0; 0; 0; 0]; % Specify failure stop time (use inf for end of sim)
+SimPar.Fail.Props.PreScale           = [0; 0; 0; 0; 0]; % Specify decimal pre-scale factor (e.g. 0.10 or 1.3)
+SimPar.Fail.Props.PostScale          = [0; 0; 0; 0; 0]; % Specify decimal post-scale factor (e.g. 0.10 or 1.3)
 SimPar.Fail.Props.PosBias            = zeros(SimIn.Eng.nENG,1); % Specify position bias in first-order model
 SimPar.Fail.Props.PosScale           = zeros(SimIn.Eng.nENG,1); % Specify position scale factor in first-order model
 SimPar.Fail.Props.UpPlim             = SimPar.Engine.MaxPos; % Specify effector upper position limit

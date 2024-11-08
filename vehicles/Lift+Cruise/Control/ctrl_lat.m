@@ -66,21 +66,23 @@ xeq = xu_eq(1:8); % Pull out the trim condition state variables
 ueq = [xu_eq(9:end)]; % Don't add flap input (not used to trim)
 
 NS = 4; % Specify number of aero control surfaces
-NP = 9; % Specify number of rotor/propeller control effectors
+NP = 5; % Specify number of rotor/propeller control effectors
 
 % Obtain the full lateral (linearized) state-space matrices and
 % full trim vector
 [Alat, Blat, Clat, Dlat, XU0] = get_lat_dynamics_heading(aircraft, xeq, ueq, NS, NP, rho, grav, FreeVar_pnt, Trans_pnt);
 
 if xeq(1) > Trans_pnt(2) % Zero out the lifting rotors after the trans regime ends
-    Blat(:,1:8) = zeros(4,8);
+    Blat(:,1:4) = zeros(4,4);
 end 
 
 % size definitions
+% hmmm not certain here
+% i think physical inputs reduces by 4 because of loss of 4 motors
 Nx  = 4;  % system states
 Ni  = 3;  % integrator states
 Nr  = 2;  % reference 
-Nu  = 10; % physical inputs
+Nu  = 6; % physical inputs
 Nv  = 1;  % virtual controls
 Nmu = 3;  % general inputs
 Nxi = 3;  % general states

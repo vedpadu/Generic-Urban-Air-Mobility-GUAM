@@ -13,7 +13,7 @@ function [Alat, Blat, Clat, Dlat, XU0] = get_lat_dynamics_heading(tiltwing, XEQ,
 %
 %   Desired linearized lateral output model
 %   x = [ vbar p r phi ]'
-%   u = [ omp1-8 dela delr ]'
+%   u = [ omp1-4 dela delr ]'
 %   y = [ vbar p r phi ]'
 %
 %  Definitions:
@@ -109,7 +109,7 @@ function [Alat, Blat, Clat, Dlat, XU0] = get_lat_dynamics_heading(tiltwing, XEQ,
 
 % Specify desired state and control indices of linear dynamics output models
 x_idx = [8 10 12 4]; % [vbar p r ph]
-u_idx = [5:12 2 4]; % [omp1-8 ail rud] order matches what is in GUAM simulation
+u_idx = [5:8 2 4]; % [omp1-8 ail rud] order matches what is in GUAM simulation
 y_idx = x_idx; 
 
 Alat = A(x_idx,x_idx);

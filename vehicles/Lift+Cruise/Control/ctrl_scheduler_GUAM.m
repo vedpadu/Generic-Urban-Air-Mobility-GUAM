@@ -37,6 +37,7 @@
 % functionality.
 % 
 
+% is this even used for strip theory based
 global POLY % Define global variable to switch between aero/propulsive L+C databases
 POLY = 1; % 1=> use polynomial aero/propulsive (A/P) database, 0=> use strip theory s-function A/P database
 
@@ -100,7 +101,7 @@ XEQ0 = zeros(21,N_trim,M_trim,L_trim);
 
 % Build the aircraft (aero/propulsive modeling..)
 if POLY  
-  SimIn.numEngines = 9;
+  SimIn.numEngines = 5;
   lpc = LpC_model_parameters(SimIn);
 else
   lpc = build_Lift_plus_Cruise();
@@ -121,7 +122,7 @@ Rlon0 = [1 1 1]'; % original
 
 % Control allocation weighting
 %       [ omp1:omp9         dele dflap    th] 
-Wlon0 = [ 1 1 1 1 1 1 1 1 1 1000 10000000 0.1]'; % Modified effector output order to match the simulation allocation
+Wlon0 = [ 1 1 1 1 1 1000 10000000 0.1]'; % Modified effector output order to match the simulation allocation
 %Wlon0 = [ 1 1 1 1 1 1 1 1 1 1000 10000000 1]'; % Modified effector output order to match the simulation allocation
 %Wlon0 = [ 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 1 1000 10000000 0.01]'; % Modified effector output order to match the simulation allocation
 
@@ -138,7 +139,7 @@ Rlat0 = [1 1 1]';
 
 % Control allocation weighting
 %       [ omp1:omp9      dela delr phi] 
-Wlat0 = [1 1 1 1 1 1 1 1 1000 1000 1]'; % Modified effector output order to match the simulation allocation
+Wlat0 = [1 1 1 1000 1000 1]'; % Modified effector output order to match the simulation allocation
 %Wlat0 = [1 1 1 1 1 1 1 1 1000 1000 0.2]'; % Modified effector output order to match the simulation allocation
 
 Qlat = repmat(Qlat0, [1,N_trim,M_trim,L_trim]);
@@ -148,13 +149,13 @@ Wlat = repmat(Wlat0, [1,N_trim,M_trim,L_trim]);
 % Specify system sizes
 Nx_lon = 4;
 Ni_lon = 3;
-Nu_lon = 11;
+Nu_lon = 7;
 Nr_lon = 3;
 Nv_lon = 1;
 
 Nx_lat = 4;
 Ni_lat = 3;
-Nu_lat = 10;
+Nu_lat = 6;
 Nr_lat = 2;
 Nv_lat = 1;
 

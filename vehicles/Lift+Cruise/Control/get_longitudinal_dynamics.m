@@ -93,13 +93,13 @@ eta0 = [ phi0; th0; 0];
 % not using flaps at the moment 
 delf0 = 0;
 
-XU0 = [vb0; om0; ab0; eta0; delf0; dela0; dele0; delr0; repmat(oml0,4,1); repmat(omt0,4,1); omp0];
+XU0 = [vb0; om0; ab0; eta0; delf0; dela0; dele0; delr0; repmat(oml0,2,1); repmat(omt0,2,1); omp0];
 
 % set the control inputs according to the desired trim conditions
-tiltwing.om_p = zeros(1,9);
-tiltwing.om_p(1:4) = oml0;
-tiltwing.om_p(5:8) = omt0;
-tiltwing.om_p(9)   = omp0;
+tiltwing.om_p = zeros(1,5);
+tiltwing.om_p(1:2) = oml0;
+tiltwing.om_p(3:4) = omt0;
+tiltwing.om_p(5)   = omp0;
 tiltwing.del_e     = dele0;
 tiltwing.del_a     = dela0;
 tiltwing.del_r     = delr0;
@@ -114,10 +114,10 @@ idx_dele = 4;
 idx_delr = 5;
 % ok so these are the indices in the u vector for the l and t derivatives
 % what does l and t mean % l for leading t for trailing edge
-idx_oml  = [ 7 11 15 19];
-idx_omt   = [23 27 31 35];
+idx_oml  = [7 11];
+idx_omt   = [15 19];
 % this is for the pusher.
-idx_omp   = 39;
+idx_omp   = 23;
 
 dFxdu = tiltwing.Fx_x(1);
 dFzdu = tiltwing.Fz_x(1);

@@ -5,7 +5,7 @@ blending_method  = 2;
 Units.deg = pi/180;
 Units.knot = 1.6878;
 a = 1125.33; % Speed of sound ft/sec
-SimIn.numEngines = 9;
+SimIn.numEngines = 5;
 [CModel ] = LpC_model_parameters(SimIn);
 
 % call the aero function at the current state and input location

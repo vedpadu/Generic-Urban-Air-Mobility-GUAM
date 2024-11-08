@@ -29,6 +29,6 @@ Out.Zeta      = repmat(zeta,nENG,1);
 Out.delay     = 0;% (sec) Transport delay
 Out.RateLim   = repmat(rl,nENG,1); % (rad/s)
 
-Out.PosLim_hi = [RotorLim(2)*ones(8,1);PropLim(2)]; % (rad/s)
-Out.PosLim_lo = [RotorLim(1)*ones(8,1);PropLim(1)]; % (rad/s)
+Out.PosLim_hi = [RotorLim(2)*ones(4,1);PropLim(2)]; % (rad/s)
+Out.PosLim_lo = [RotorLim(1)*ones(4,1);PropLim(1)]; % (rad/s)
 Out.Bias      = SimIn.IC.bias.Engines;

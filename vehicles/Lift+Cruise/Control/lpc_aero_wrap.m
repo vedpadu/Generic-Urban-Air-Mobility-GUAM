@@ -15,9 +15,10 @@ model.del_r     = u(4);
 
 model.om_p = zeros(1,5);
 % why was this two lines???
-model.om_p(1:4) = u(5:8)';
-%model.om_p(5:8) = u(9:12)';
-model.om_p(9)   = u(9); 
+% for leading and trailing edge
+model.om_p(1:2) = u(5:6)';
+model.om_p(3:4) = u(7:8)';
+model.om_p(5)   = u(9); 
 
 % evaluate the aerodynamics of the aircraft and 
 model.aero(rho, x(1:3), x(4:6), 1);

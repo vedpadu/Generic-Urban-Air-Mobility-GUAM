@@ -4,7 +4,7 @@ function [F, M, F_x, M_x, F_u, M_u] = poly_aero_wrapper_Mod(x,u,rho,XRAW, kts2ft
 % blending_method  = 2;
 Units.deg = pi/180;
 Units.knot = kts2ft;
-SimIn.numEngines = 9;
+SimIn.numEngines = 5;
 % [~, CModel ] = LpC_model_parameters(SimIn);
 [CModel ] = LpC_model_parameters(SimIn);
 
