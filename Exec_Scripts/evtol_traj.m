@@ -2,6 +2,7 @@
 model = 'GUAM';
 % use timeseries input
 userStruct.variants.refInputType=3; % 1=FOUR_RAMP, 2= ONE_RAMP, 3=Timeseries, 4=Piecewise Bezier, 5=Default(doublets)
+userStruct.variants.fmType      = 1; % 1 = Aerodynamic model, 1 = s-function, 2 = polynomial
 %userStruct.variants.vehicleType = 1;
 
 %% setup trajectory and pass to target
