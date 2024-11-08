@@ -46,8 +46,6 @@ NPw = tiltwing.WingProp.NP;
 NPt = tiltwing.Tail.NP;
 NPp = length(tiltwing.Prop); 
 
-% what does 6 mean :(
-% should sum to 26 i think, if not it should sum to 9, not certain
 NU = sum([NPw NPt NPp 6]); % number of inputs
 NX = 6; % number of states
 

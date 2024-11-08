@@ -16,13 +16,13 @@
 /* Define the number of s-function inputs and outputs, size of B  */
 #define num_Inputs 6
 #define num_Outputs 6
-#define num_props 9
+#define num_props 5
 #define num_surf 4
 #define num_FM 6          /* Fx, Fy, Fz, Mx, My, Mz */
 #define num_der_states 6  /* states = (u,v,w,p,q,r) */
-#define num_der_inputs 42 /* wingprop = 1x3(fl,ail,tilt), tail = 1x3(ele,rud,tilt),
-                             prop = 1x4(om,roll,pitch,yaw) per prop, NP = 9
-                             so number of inputs = 3 + 3 + 4*9 = 42 */
+#define num_der_inputs 26 /* wingprop = 1x3(fl,ail,tilt), tail = 1x3(ele,rud,tilt),
+                             prop = 1x4(om,roll,pitch,yaw) per prop, NP = 5
+                             so number of inputs = 3 + 3 + 4*5 = 26 */
 
 /*
  * Need to include simstruc.h for the definition of the SimStruct and

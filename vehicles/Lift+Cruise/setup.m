@@ -6,7 +6,7 @@ function Out = setup(SimIn, target, releaseMode)
   end
   
   % setup the number of engines and control surfaces
-  SimIn.numEngines = 9;
+  SimIn.numEngines = 5;
   SimIn.numSurfaces = 5;  % e.g. left flaperon, right flaperon, left elevator, right elevator, rudder
 
   % build scripts for the different model types

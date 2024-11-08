@@ -213,12 +213,13 @@ classdef TiltWingClass %#codegen
       obj.My_x = zeros(1,6);
       obj.Mz_x = zeros(1,6);
       
-      obj.Fx_u = zeros(1,42);
-      obj.Fy_u = zeros(1,42);
-      obj.Fz_u = zeros(1,42);
-      obj.Mx_u = zeros(1,42);
-      obj.My_u = zeros(1,42);
-      obj.Mz_u = zeros(1,42);
+      % needs to change to 26 % 3 + 3 + 4 * 5
+      obj.Fx_u = zeros(1,26);
+      obj.Fy_u = zeros(1,26);
+      obj.Fz_u = zeros(1,26);
+      obj.Mx_u = zeros(1,26);
+      obj.My_u = zeros(1,26);
+      obj.Mz_u = zeros(1,26);
 
       obj.aero_Fx = 0;
       obj.aero_Fy = 0;

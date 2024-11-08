@@ -112,11 +112,9 @@ idx_delf = 1;
 idx_dela = 2;
 idx_dele = 4;
 idx_delr = 5;
-% ok so these are the indices in the u vector for the l and t derivatives
-% what does l and t mean % l for leading t for trailing edge
+% ok so these are a
 idx_oml  = [ 7 11 15 19];
 idx_omt   = [23 27 31 35];
-% this is for the pusher.
 idx_omp   = 39;
 
 dFxdu = tiltwing.Fx_x(1);
