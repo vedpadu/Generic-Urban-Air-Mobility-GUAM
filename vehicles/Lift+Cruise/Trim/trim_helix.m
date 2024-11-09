@@ -6,7 +6,7 @@ tiltwing.om_p = [0 0 0 0 0 0 0 0 0];
 
 % *************************************************************************
 global POLY
-POLY = 1; % Denotes to use poly database
+POLY = 0; % Denotes to use poly database
 blending_method = 2; % Polynomial blending method 
 % ************ BLENDING METHOD MUST MATCH WHAT IS USED IN SIM!!! **********
 
@@ -19,8 +19,8 @@ a = 1125.33; % Speed of sound ft/sec
 % out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver2p0'; % Trim_Ver1p0
 %out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver2p0'; % Trim_Ver2p0
 %out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver3p0'; % Trim_Ver3p0
-out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver4p0'; % Trim_Ver3p0
-save_flag       = 0;
+out_path        = 'C:\Users\vedpa\OneDrive\Desktop\GUAM_Fork\Generic-Urban-Air-Mobility-GUAM\vehicles\Lift+Cruise\TrimTest'; % Trim_Ver3p0
+save_flag       = 1;
 
 % Specifies the trim case to run...
 % *************************************************************************
@@ -367,7 +367,7 @@ output_store{count} = output;
     
     % Save the results if flagged to do so...
     if save_flag
-        Multi_Fig_Save_func(out_path, 1.4, 1.4,'.fig','.png');
+        %Multi_Fig_Save_func(out_path, 1.4, 1.4,'.fig','.png');
         save(fullfile(out_path, sprintf('Trim_Case_%0.3g_R%0.3g_WH%0.3g_XEQ.mat', trim_des_num, R(ii), WH(kk))), "XEQ","XEQ_All","UH", "WH", "R",...
             "trans_start", "trans_end", "FreeVar_hover","offset_x0_hover","scale_hover", "gang_hover", ...
             "FreeVar_trans", "offset_x0_trans", "scale_trans", "gang_trans", ...

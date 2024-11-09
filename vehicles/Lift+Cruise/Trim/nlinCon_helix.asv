@@ -157,15 +157,16 @@ else
   LPC.del_r     = del(4);
 
   % calulate aircraft aero
+  
+  aero_Fb = tiltwing.aero_Fb();
+  aero_Mb = tiltwing.aero_Mb();
   if nargout >2
-    temp = LPC.aero(RHO, vb, om, 1);
-    F = temp.aero_Fb();
-    M = temp.aero_Mb();
+    temp = LPC.aero(RHO, vb, om, 0);
+    
   else
-      temp = LPC.aero(RHO, vb, om, 1);
-      F = temp.aero_Fb();
-      M = temp.aero_Mb();
-      %[F ,M] = [temp.aero_Fb(), temp.aero_Mb()];
+      temp = LPC.aero(RHO, vb, om, 0);
+      F = temp.aero_F
+      [F ,M] = [temp.aero_Fb(), temp.aero_Mb()];
   end
 
 end
