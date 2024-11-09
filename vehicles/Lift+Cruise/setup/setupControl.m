@@ -72,6 +72,8 @@ track     = refInputs.initialTrack;
 ubar0 = Vel_bIc_0(1);
 wbar0 = Vel_bIc_0(3);
 % there is no way this is going to work on the low.
+% atm this is adapting the trim table, i think i should be generating a new
+% one.
 % 1 4 5 8 deleted.. i have an idea
 ii0 = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19 22 23 25];
 for i = 1:21

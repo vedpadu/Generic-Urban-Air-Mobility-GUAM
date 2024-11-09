@@ -5,7 +5,7 @@ function [XEQ] = show_trim(trim_file,ONE_PLOT)
   
 
   if ischar(trim_file)
-      load(trim_file);
+      XEQ = load(trim_file);
   else 
       XEQ = trim_file;
   end

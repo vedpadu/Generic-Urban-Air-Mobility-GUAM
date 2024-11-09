@@ -60,9 +60,9 @@ Model.prop_spin = [ 1  -1  -1  1  1];
 Model.Ip=[13.486*ones(1,4),17.486];
 
 % propeller/rotor orientation angles (roll-pitch-yaw) [deg], see Ref. [1]
-Model.Prop_angles=[    0,   0,    0,   0,   0
-                    -90, -90, -90, -90,   0
-                      +8,  -8,    +8,  -8,   0];
+Model.Prop_angles=[    0,   0,    0,   0,   0,   0
+                    -90, -90, -90, -90, -90,   0
+                      +8,  -8,    +8,  -8,   0,   0];
 
 % unit vector of the axis of rotation and hub rotation matrix
 Model.Prop_rot_axis_e=zeros(3,SimIn.numEngines);

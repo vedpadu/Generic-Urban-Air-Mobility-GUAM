@@ -19,7 +19,7 @@ a = 1125.33; % Speed of sound ft/sec
 % out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver2p0'; % Trim_Ver1p0
 %out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver2p0'; % Trim_Ver2p0
 %out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver3p0'; % Trim_Ver3p0
-out_path        = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\vehicles\Lift+Cruise\Trim\Trim_Figs\Trim_Ver4p0'; % Trim_Ver3p0
+out_path        = 'C:\Users\vedpa\OneDrive\Desktop\GUAM_Fork\Generic-Urban-Air-Mobility-GUAM\vehicles\Lift+Cruise\TrimTest'; % Trim_Ver3p0
 save_flag       = 0;
 
 % Specifies the trim case to run...
