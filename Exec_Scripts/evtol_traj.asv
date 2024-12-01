@@ -8,8 +8,7 @@ userStruct.variants.refInputType=3; % 1=FOUR_RAMP, 2= ONE_RAMP, 3=Timeseries, 4=
 %time        = [0 10:1:40]'; % Column vector of time points
 %time = [0 10 12 22 25 35]';
 %time = [0 10 13 14 23 26 27 36 39]';
-%time = [linspace(0, 30, 30) linspace(31, 294, 264) linspace(295, 600, 306)]';
-time = [linspace(0, 30, 30) linspace(31, 334, 304)]';
+time = [linspace(0, 30, 30) linspace(31, 294, 26) linspace(295, 600, 100)]';
 
 N_time = length(time);
 
@@ -25,8 +24,8 @@ chid    = zeros(N_time, 3);
 %pos = [0 0 0; 0 0 -100; 0 0 -100; 200 0 -100; 200 0 -100; 200 0 0];
 
 [pos(1:30, :), vel_i(1:30, :)] = generate_Motion_Profile([0, 0, -50], [0, 0, 0], 0, 30, 30);
-[pos(31:334, :), vel_i(31:334, :)] = generate_Motion_Profile([4000, 0, -4000], [0, 0, -50], 0, 304, 304);
-%[pos(295:600, :), vel_i(295:600, :)] = generate_Motion_Profile([8636, 0, -4000], [4000, 0, -4000], 0, 306, 306);
+[pos(31:294, :), vel_i(31:294, :)] = generate_Motion_Profile([4000, 0, -4000], [0, 0, -50], 0, 264, 264);
+[pos(295:600, :), vel_i(295:600, :)] = generate_Motion_Profile([8636, 0, 4000], [4000, 0, -4000], 0, 306, 100);
 
 
 %vel_i(:,1)  = gradient(pos(:,1))./gradient(time); 

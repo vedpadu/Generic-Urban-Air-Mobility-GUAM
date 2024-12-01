@@ -9,7 +9,7 @@ switch u_choice
     case 2
         exam_TS_Hover2Cruise_traj
     case 3
-        my_traj
+        evtol_traj
     case 4
         exam_RAMP
     case 5 
