@@ -1,11 +1,11 @@
-%function [p, v] = generate_Motion_Profile(final_pos, initial_pos, v0, v1, init_time, final_time, timesteps)
-final_pos = [20, 0, 0];
-initial_pos = [0, 0, 0];
-v0 = [1, 0, 0];
-v1 = [2, 0, 0];
-init_time = 0;
-final_time = 9;
-timesteps = 90;
+function [p, v] = generate_Motion_Profile(final_pos, initial_pos, v0, v1, init_time, final_time, timesteps)
+%final_pos = [20, 0, 0];
+%initial_pos = [0, 0, 0];
+%v0 = [1, 0, 0];
+%v1 = [2, 0, 0];
+%init_time = 0;
+%final_time = 9;
+%timesteps = 90;
 delta = final_pos - initial_pos;
 numE = timesteps;
 dt = (final_time - init_time)/numE;
@@ -44,12 +44,12 @@ v = v';
 p = p';
 
 % plotting code
-figure(1)
-plot(t_mat, v(:, 1), "r-");
-grid on
-hold on
-plot(t_mat, p(:, 1), "g-");
- 
-xlabel("time (s)");
-ylabel("X Position")
-legend("velocity", "Pos", 'location', "northwest")
+% figure(1)
+% plot(t_mat, v(:, 1), "r-");
+% grid on
+% hold on
+% plot(t_mat, p(:, 1), "g-");
+% 
+% xlabel("time (s)");
+% ylabel("X Position")
+% legend("velocity", "Pos", 'location', "northwest")

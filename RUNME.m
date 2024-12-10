@@ -14,7 +14,7 @@ switch u_choice
         exam_RAMP
     case 5 
         if ~exist("userStruct",'var')
-            addpath('./Bez_Functions/');
+            addpath('./Bez_Functions/');3
         end
         exam_Bezier;
     otherwise

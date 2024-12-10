@@ -9,7 +9,7 @@ userStruct.variants.refInputType=3; % 1=FOUR_RAMP, 2= ONE_RAMP, 3=Timeseries, 4=
 %time = [0 10 12 22 25 35]';
 %time = [0 10 13 14 23 26 27 36 39]';
 %time = [linspace(0, 30, 30) linspace(31, 294, 264) linspace(295, 600, 306)]';
-time = [linspace(0, 30, 30) linspace(31, 334, 304)]';
+time = [linspace(0, 30, 100) linspace(31, 294, 100) linspace(295, 595, 100), linspace(596, 1070, 100), linspace(1071, 1101, 30) linspace(1101, 1131, 100)]';
 
 N_time = length(time);
 
@@ -24,9 +24,13 @@ chid    = zeros(N_time, 3);
 %pos = zeros([N_time 3]);
 %pos = [0 0 0; 0 0 -100; 0 0 -100; 200 0 -100; 200 0 -100; 200 0 0];
 
-[pos(1:30, :), vel_i(1:30, :)] = generate_Motion_Profile([0, 0, -50], [0, 0, 0], 0, 30, 30);
-[pos(31:334, :), vel_i(31:334, :)] = generate_Motion_Profile([4000, 0, -4000], [0, 0, -50], 0, 304, 304);
-%[pos(295:600, :), vel_i(295:600, :)] = generate_Motion_Profile([8636, 0, -4000], [4000, 0, -4000], 0, 306, 306);
+[pos(1:100, :), vel_i(1:100, :)] = generate_Motion_Profile([0, 0, -50], [0, 0, 0], [0,0,0], [0, 0, 0], 0, 30, 100);
+[pos(101:200, :), vel_i(101:200, :)] = generate_Motion_Profile([4000, 0, -4000], [0, 0, -50], [0, 0, 0], [13.334, 0, 0],  0, 263, 100);
+[pos(201:300, :), vel_i(201:300, :)] = generate_Motion_Profile([8000, 0, -4000], [4000, 0, -4000], [13.334, 0, 0], [0, 0, 0], 0, 300, 100);
+[pos(301:400, :), vel_i(301:400, :)] = generate_Motion_Profile([8000, 0, -50], [8000, 0, -4000], [0, 0, 0], [0, 0, 0], 0, 474, 100);
+[pos(401:430, :), vel_i(401:430, :)] = generate_Motion_Profile([8000, 0, -50], [8000, 0, -50], [0, 0, 0], [0, 0, 0], 0, 30, 30);
+[pos(431:530, :), vel_i(431:530, :)] = generate_Motion_Profile([8000, 0, 0], [8000, 0, -50], [0, 0, 0], [0, 0, 0], 0, 30, 100);
+
 
 
 %vel_i(:,1)  = gradient(pos(:,1))./gradient(time); 

@@ -20,11 +20,11 @@
 % *********************** User Input **************************************
 close all;
 %DataFname       = 'C:\Users\macheson\Desktop\TTT_AS_Git\GTM-GUAM-simulation\Exec_Scripts\Hover2CruiseSimOut.mat'; % Input SimOut filename or ''
-DataFname       = 'C:\Users\vedpa\OneDrive\Desktop\GUAM_Fork\Generic-Urban-Air-Mobility-GUAM\Exec_Scripts\evtol3.mat'; % Input SimOut filename or ''
-VideoOutFname   = './evtol3.avi'; % Desired filename of output video
+DataFname       = 'C:\Users\vedpa\OneDrive\Desktop\GUAM_Fork\Generic-Urban-Air-Mobility-GUAM\Exec_Scripts\evtolTrajectoryFromPaper.mat'; % Input SimOut filename or ''
+VideoOutFname   = './evtolTrajFromPaper.avi'; % Desired filename of output video
 
 % User String to put in movie title
-TitStr          ='Demo Video of RUNME: EVTOL,'; % User String to put in movie title
+TitStr          ='EVTOL Trajectory'; % User String to put in movie title
 
 % Specify desired start/stop simulation times to display in .avi movie
 t_start         = 0; % Specify simulation time to start .avi movie
